@@ -70,7 +70,7 @@ input[type="button"]{
 
 .login-background-image{
     position: absolute;
-    background-image: url("/assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg");
+    /* background-image: url("assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg"); */
     filter: blur(8px);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -81,7 +81,7 @@ input[type="button"]{
 
 .signup-background-image{
     position: absolute;
-    background-image: url("/assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg");
+    /* background-image: url("/Applications/XAMPP/xamppfiles/htdocs/AshesiEats-Software-Engineering-Project/assets/img/eaters-collective-12eHC6FxPyg-unsplash.jpg"); */
     filter: blur(8px);
     background-repeat: no-repeat;
     background-size: 100%;

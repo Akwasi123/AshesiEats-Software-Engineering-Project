@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <title>Ashesi Eats - Login</title>
 </head>
 
@@ -40,7 +40,7 @@
         <span class="create-account">Don't have an account? Sign up <a href="signup.php">here.</a></span>
     </div>
     
-    <img src="assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="" class="background-image">
+    <img src="./assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="" class="login-background-image">
 </body>
 
 </html>
