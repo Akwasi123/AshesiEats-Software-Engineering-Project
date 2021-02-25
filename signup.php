@@ -42,7 +42,7 @@
             </div>
 
             <div class="field">
-            <input type="submit" name="submit" value="Create account">
+            <input type="submit" name="submit" value="Create account" class="button">
             </div>            
         </form>
 

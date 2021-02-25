@@ -1,3 +1,4 @@
+
 function valid(){
     var Name=document.getElementById("Name");
     var Email=document.getElementById("Email");
@@ -34,3 +35,5 @@ function valid(){
         return true;
     }
 }
+
+addEventListener()
