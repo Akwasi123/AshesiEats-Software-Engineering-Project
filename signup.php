@@ -91,7 +91,7 @@
         <span class="create-account">Already have an account? <a href="index.php">Log in</a></span>
     </div>
     
-    <img src="assets/img/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="" class="background-image">
+    <img src="assets/img/eaters-collective-12eHC6FxPyg-unsplash.jpg" alt="" class="background-image">
 </body>
 
 </html>
