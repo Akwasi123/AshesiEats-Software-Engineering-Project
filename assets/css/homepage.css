@@ -12,6 +12,7 @@
 
 body{
     height: 100vh;
+    /* position: relative; */
 }
 
 .content-container{
@@ -33,11 +34,11 @@ body{
 
 .main-content .greeting{
     font-size: 2rem;
-    padding: 10px;
+    padding: 5px;
 }
 
-.hero{
-    height: 300px;
+.carousel{
+    height: 400px;
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;
@@ -58,6 +59,7 @@ body{
 }    
 
 .sidebar{
+    /* position: fixed; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,12 +91,15 @@ body{
     padding-left: 10px;
 }
 
+.carousel-inner{
+    height: 100%;
+    border-radius: 10px;
+}
 
-
-.active{
+.m-active{
     height: 40px;
     width: 100%;
-    background-color: brown;
+    background-color: green;
 }
 
 
