@@ -59,7 +59,8 @@ body{
 .card{
     display: flex;
     align-items: center;
-    height: 150px;
+    justify-content: center;
+    height: 250px;
     width: 350px;
     border-radius: 10px;
     border: 1px solid brown;
@@ -73,7 +74,7 @@ body{
     cursor: pointer;
     color: white;
     background-color: brown;
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in-out;
 }
 
 .sidebar{
