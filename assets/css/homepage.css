@@ -34,7 +34,12 @@ body{
 
 .main-content .greeting{
     font-size: 2rem;
+    color: brown;
     padding: 5px;
+}
+
+.main-content .greeting span{
+    color: black;
 }
 
 .carousel{
@@ -52,7 +57,7 @@ body{
 }
 
 .card{
-    height: 250px;
+    height: 150px;
     width: 350px;
     border-radius: 10px;
     border: 1px solid brown;
@@ -99,7 +104,7 @@ body{
 .m-active{
     height: 40px;
     width: 100%;
-    background-color: green;
+    background-color: brown;
 }
 
 
