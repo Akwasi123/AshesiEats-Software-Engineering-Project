@@ -57,11 +57,24 @@ body{
 }
 
 .card{
+    display: flex;
+    align-items: center;
     height: 150px;
     width: 350px;
     border-radius: 10px;
     border: 1px solid brown;
 }    
+
+.card p{
+    font-size: 2rem;
+}
+
+.card:hover{
+    cursor: pointer;
+    color: white;
+    background-color: brown;
+    transition: all 0.2s ease-in;
+}
 
 .sidebar{
     /* position: fixed; */
