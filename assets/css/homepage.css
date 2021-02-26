@@ -27,7 +27,7 @@ body{
 
 .main-content{
     flex-basis: 85%;
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
     padding: 20px;
 }
 
@@ -55,5 +55,48 @@ body{
     width: 350px;
     border-radius: 10px;
     border: 1px solid brown;
+}    
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+
+.brand{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.brand p{
+    color: white;
+    /* margin-left: 10px; */
+    font-size: 2rem;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.bottom{
+    margin-top: auto;
+}
+
+.active{
+    height: 35px;
+    width: 100%;
+    background-color: brown;
+}
+
 

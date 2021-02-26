@@ -20,7 +20,7 @@
             <img src="" alt="">
             <p>Ashesi Eats</p>
         </div>
-        <form action="index.php" class="login-form" method="post">
+        <form action="homepage.html" class="login-form" method="post">
         <?php include ('error.php'); ?>
 
             <div class="field">
