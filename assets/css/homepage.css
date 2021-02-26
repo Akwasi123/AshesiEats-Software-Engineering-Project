@@ -89,12 +89,10 @@ body{
     padding-left: 10px;
 }
 
-.bottom{
-    margin-top: auto;
-}
+
 
 .active{
-    height: 35px;
+    height: 40px;
     width: 100%;
     background-color: brown;
 }
