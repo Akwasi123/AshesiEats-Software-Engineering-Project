@@ -4,7 +4,7 @@ $Name="";
 $Email="";
 $errors=array();
 
-$db = mysqli_connect('localhost','root','','sep');
+include 'dbconnection.php';
 
 if(isset($_POST['submit'])){
     $Name = $_POST['Name'];
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
         $password=md5($password_1);
         $sql="INSERT INTO signup (Name,Email,password) VALUES ('$Name','$email','$password')";
 
-        mysqli_query($db,$sql);
+        mysqli_query($link,$sql);
         header('location:index.php');
         
         
@@ -40,24 +40,26 @@ if(isset($_POST['Login'])){
     $password = $_POST['password'];
 
     if (empty($Name)) {
-        array_push($errors, "Username Required");
+        array_push($errors, "<span style='color: red;'>" .'Username Required'. "</span>");
     }
     if (empty($password)) {
-        array_push($errors, "Password Required");
+        array_push($errors, "<span style='color: red;'>" .'Password Required'. "</span>");
     }
     
     if (count($errors)==0) { 
         $password=md5($password);
         $query="SELECT * FROM signup WHERE Name='$Name' AND password='$password'";
         
-        $results1= mysqli_query($db,$query);
+        $results1= mysqli_query($link,$query);
 
         
         if ($row=mysqli_fetch_array($results1)) {
-            header('location:home.php');
+            $_SESSION['Name'] = $Name;
+            header('location:homepage.php');
         }
         else{
-            array_push($errors,"Wrong Username or Password");
+            array_push($errors,"<span style='color: red;'>" .'Wrong username or password'. "</span>");
+            // header('location: index.php');
         }
     
     }

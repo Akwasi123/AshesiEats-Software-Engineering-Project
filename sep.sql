@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
+CREATE Database sep;
+
+USE sep;
+
 CREATE TABLE `cart` (
   `Cart_ID` int(11) NOT NULL,
   `Customer_ID` int(11) NOT NULL,
