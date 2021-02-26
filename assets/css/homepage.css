@@ -122,3 +122,7 @@ body{
 }
 
 
+/* css for cart page */
+.cart-title{
+    font-size: 5rem;
+}
