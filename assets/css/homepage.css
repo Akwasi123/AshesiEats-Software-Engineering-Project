@@ -116,8 +116,6 @@ body{
 }
 
 .m-active{
-    height: 40px;
-    width: 100%;
     background-color: brown;
 }
 
