@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2021 at 02:37 PM
+-- Generation Time: Feb 27, 2021 at 01:55 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -27,10 +27,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
-CREATE Database sep;
-
-USE sep;
-
 CREATE TABLE `cart` (
   `Cart_ID` int(11) NOT NULL,
   `Customer_ID` int(11) NOT NULL,
@@ -50,6 +46,30 @@ CREATE TABLE `customers` (
   `CEmail` varchar(100) NOT NULL,
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meal`
+--
+
+CREATE TABLE `meal` (
+  `id` varchar(230) NOT NULL,
+  `Breakfast` varchar(255) NOT NULL,
+  `Lunch` varchar(255) NOT NULL,
+  `Drink` varchar(255) NOT NULL,
+  `Supper` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `meal`
+--
+
+INSERT INTO `meal` (`id`, `Breakfast`, `Lunch`, `Drink`, `Supper`) VALUES
+('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
+('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup'),
+('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
+('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup');
 
 -- --------------------------------------------------------
 
@@ -115,7 +135,8 @@ INSERT INTO `signup` (`id`, `Name`, `Email`, `password`) VALUES
 (17, '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
 (18, 'Nana', 'bright.okrah@ashesi.edu.gh', '6512bd43d9caa6e02c990b0a82652dca'),
 (19, 'Bright Jnr O', 'b@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d'),
-(20, 'Okrah', 'bb@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d');
+(20, 'Okrah', 'bb@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d'),
+(21, 'Bright', 'b@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d');
 
 --
 -- Indexes for dumped tables
@@ -186,7 +207,7 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(230) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(230) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
