@@ -111,21 +111,21 @@ if($_SESSION['Name']){
 
               <!-- restaurants list -->
               <div class="card-container">
-                  <div class="card">
+                  <a href="akonnor.html" class="card">
                       <!-- icon -->
                       <img src="./assets/img/icons8-kawaii-french-fries-100.png" alt="" width="100">
                       <p>Akonnor</p>
-                  </div>
-                  <div class="card">
+                  </a>
+                  <a href="" class="card">
                       <!-- brand -->
                       <img src="./assets/img/icons8-kawaii-pizza-100.png" alt="">
                       <p>Big Ben</p>
-                  </div>
-                  <div class="card">
+                  </a>
+                  <a href="" class="card">
                       <!-- brand -->
                       <img src="./assets/img/icons8-kawaii-noodle-100.png" alt="">
                       <p>Lynnes Cuisine</p>
-                  </div>
+                  </a>
               </div>
           </div>
       </div>
