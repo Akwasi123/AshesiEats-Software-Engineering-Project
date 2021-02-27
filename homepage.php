@@ -111,7 +111,7 @@ if($_SESSION['Name']){
 
               <!-- restaurants list -->
               <div class="card-container">
-                  <a href="akonnor.html" class="card">
+                  <a href="akonnor.php" class="card">
                       <!-- icon -->
                       <img src="./assets/img/icons8-kawaii-french-fries-100.png" alt="" width="100">
                       <p>Akonnor</p>
