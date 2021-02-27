@@ -82,37 +82,55 @@
       <div class="card menu-plaque px-5">
         <span>Menu</span>
         <hr>
-        <div>
-          <table border=2 cellpadding=3 cellspacing=3>
-            <thead>
-              <tr>
-                <th scope="col">BREAKFAST</th>
-                <th scope="col">LUNCH</th>
-                <th scope="col">JUICE/DRINK</th>
-                <th scope="col">SUPPER</th>
-              </tr>
-            </thead>
+        <div class="row">
+            <div class="col-md-12">
+        
+                <?php
+                // Include config file
+                require_once "dbconnection.php";
+                
+                // Attempt select query execution
+                $sql = "SELECT * FROM meal";
+                if($result = mysqli_query($link, $sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo "<table class='table table-bordered table-striped'>";
+                            echo "<thead>";
+                                echo "<tr>";
+                                    echo "<th>ID</th>";
+                                    echo "<th>BREAKFAST</th>";
+                                    echo "<th>LUNCH</th>";
+                                    echo "<th>JUICE</th>";
+                                    echo "<th>SUPPER</th>";
+                                echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                    echo "<td>" . $row['id'] . "</td>";
+                                    echo "<td>" . $row['Breakfast'] . "</td>";
+                                    echo "<td>" . $row['Lunch'] . "</td>";
+                                    echo "<td>" . $row['Drink'] . "</td>";
+                                    echo "<td>" . $row['Supper'] . "</td>";
+                      
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";                            
+                        echo "</table>";
+                        // Free result set
+                        mysqli_free_result($result);
+                    } else{
+                        echo "<p class='lead'><em>No records were found.</em></p>";
+                    }
+                } else{
+                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                }
 
-            <?php
-            $db = mysqli_connect('localhost','root','');
-     
-            mysqli_select_db($db,'sep');
-     
-            $sql= "SELECT * FROM meal";
-     
-            $records = mysqli_query($db,$sql);
-     
-            while ($row = mysqli_fetch_array($records)) {
-             echo "<tr>";
-             echo "<td>".$row['Breakfast']."</td>";
-             echo "<td>".$row['Lunch']."</td>";
-             echo "<td>".$row['Drink']."</td>";
-             echo "<td>".$row['Supper']."</td>";
-             }
-             ?>
-             
-            </table>
-        </div>
+                // Close connection
+                mysqli_close($link);
+                ?>
+            </div>
+        </div>        
+                  
           
       </div>
     </div>

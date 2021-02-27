@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
+CREATE DATABASE sep;
+
+USE sep;
+
 CREATE TABLE `cart` (
   `Cart_ID` int(11) NOT NULL,
   `Customer_ID` int(11) NOT NULL,
@@ -68,8 +72,8 @@ CREATE TABLE `meal` (
 INSERT INTO `meal` (`id`, `Breakfast`, `Lunch`, `Drink`, `Supper`) VALUES
 ('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
 ('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup'),
-('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
-('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup');
+('3', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
+('4', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup');
 
 -- --------------------------------------------------------
 
