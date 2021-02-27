@@ -48,6 +48,8 @@ class Header{
                         <div>".$this->name."  <i class='far fa-user-circle'></i></div>
                     </div>
                 </div>
+            </div>
+        </div>
       ";
     }
 
