@@ -40,7 +40,7 @@
                 <div class="bottom">
                     <div class="menu">
                         <img src="../assets/img/icons8-settings-100.png" alt="" width="30">
-                        <a href="settings.php">Profile Settings</a>
+                        <a href="./profilesettings.php">Profile Settings</a>
                     </div>
 
                     <div class="menu">
@@ -62,7 +62,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Menu Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Menu Item</a>
+                        <a href="addmenu.php" class="btn btn-success pull-right">Add New Menu Item</a>
                     </div>
                     <?php
                     // Include config file
