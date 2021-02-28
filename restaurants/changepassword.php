@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include config file
 require_once "../dbconnection.php";
  
@@ -25,11 +26,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check input errors before inserting in database
     if(empty($password_err)){
         // Prepare an update statement
-        $sql = "UPDATE restaurants SET password=? WHERE Restaurant_ID=?";
+        $sql = "UPDATE restaurants SET password=? WHERE Name=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+            mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_id);
             
             // Set parameters
             $param_password = $password;
@@ -60,10 +61,10 @@ else{
         $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM restaurants WHERE Restaurant_ID = ?";
+        $sql = "SELECT * FROM restaurants WHERE Name = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            mysqli_stmt_bind_param($stmt, "s", $param_id);
             
             // Set parameters
             $param_id = $id;
@@ -136,7 +137,7 @@ if($_SESSION['Name']){
                         
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="profilesettings.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        

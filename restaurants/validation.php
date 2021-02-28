@@ -2,6 +2,7 @@
 session_start();
 $Name = "";
 $Email = "";
+$id = "";
 $errors = array();
 
 include '../dbconnection.php';
@@ -49,13 +50,14 @@ if (isset($_POST['Login'])) {
 
     if (count($errors) == 0) {
         $password = md5($password);
-        $query = "SELECT * FROM restaurants WHERE REMail='$email' AND Name='$Name' AND password='$password'";
+        $query = "SELECT * FROM restaurants WHERE  REMail='$email' AND Name='$Name' AND password='$password'";
 
         $results1 = mysqli_query($link, $query);
 
 
         if ($row = mysqli_fetch_array($results1)) {
             $_SESSION['Name'] = $Name;
+
             header('location: home.php');
         } else {
             array_push($errors, "<span style='color: red;'>" . 'Wrong username or password' . "</span>");

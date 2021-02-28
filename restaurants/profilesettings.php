@@ -1,6 +1,7 @@
 <?php
 session_start();
 if($_SESSION['Name']){
+    echo $_SESSION['ID'];
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -49,7 +50,7 @@ if($_SESSION['Name']){
 
                         <div class="menu">
                             <img src="../assets/img/icons8-logout-rounded-left-100.png" alt="" width="30">
-                            <a href="logout.php">Logout</a>
+                            <a href="./r-logout.php">Logout</a>
                         </div>
                     </div>
                     
@@ -73,7 +74,7 @@ if($_SESSION['Name']){
                             <img src="../assets/img/icons8-edit-100.png" alt="">
                             <p>Edit Profile</p>
                         </div> -->
-                        <?php echo "<a style='text-decoration: none;' href='changepassword.php?id=". $row["id"]. "'class='card'>
+                        <?php echo "<a style='text-decoration: none;' href='changepassword.php?id=". $_SESSION['Name']. "'class='card'>
                             <img src='../assets/img/icons8-forgot-password-100.png' >
                             <p>Change Password</p>
                         </a>"
