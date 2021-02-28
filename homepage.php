@@ -68,7 +68,7 @@ if($_SESSION['Name']){
           <!-- rest of content on page -->
           <div class="main-content">
               <!-- greeting -->
-              <p class="greeting">Welcome, <span>Akwasi</span></p>
+              <p class="greeting">Welcome, <?php echo"<span>".$_SESSION['Name']."</span></p>";?>
               <!-- carousel -->
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">

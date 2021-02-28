@@ -1,112 +1,124 @@
-<?php
-    session_start();
-    include ("Header.php");
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/39aa2f0e20.js" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/orders.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-print-1.6.5/cr-1.5.3/fh-3.1.8/kt-2.6.1/r-2.2.7/rr-1.2.7/sb-1.0.1/sp-1.2.2/datatables.min.css"/>
- 
-    <title>AshesiEats - Orders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="./css/home.css">
+<title>Akonnor - Orders</title>
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-print-1.6.5/cr-1.5.3/fh-3.1.8/kt-2.6.1/r-2.2.7/rr-1.2.7/sb-1.0.1/sp-1.2.2/datatables.min.js"></script>
+    <div class="content-container">
+        <!-- content on sidebar -->
+        <div class="sidebar">
+            <div class="contents">
+                <!-- brand -->
+                <div class="brand">
+                    <!-- <img src="./assets/img/9f914596-0217-419b-a760-d7b4019574ae.svg" alt="" width="60"> -->
+                    <p>Ashesi Eats</p>
+                </div>
 
-    <?php
-        $id= $_SESSION["user_id"];
-        $user= $_SESSION["username"];
-        $header = new Header($id, $user);
-        $header->show();
-    ?>
+                <!-- menu items -->
+                <div class="menu">
+                    <img src="../assets/img/icons8-home-page-100.png" alt="" width="30">
+                    <a href="./home.php">Home</a>
+                </div>
 
-    <div id="main-page" class="container-fluid ">
-        <div class="ml-5">
-            <h2>Orders</h2>
+                <div class="menu">
+                    <img src="../restaurants/img/icons8-menu-100.png" alt="" width="30">
+                    <a href="./menu.php">Menu</a>
+                </div>
+
+                <div class="menu m-active">
+                    <img src="../assets/img/icons8-time-machine-100.png" alt="" width="30">
+                    <a href="./orders.php">Orders</a>
+                </div>
+
+                <div class="bottom">
+                    <div class="menu">
+                        <img src="../assets/img/icons8-settings-100.png" alt="" width="30">
+                        <a href="./profilesettings.php">Profile Settings</a>
+                    </div>
+
+                    <div class="menu">
+                        <img src="../assets/img/icons8-logout-rounded-left-100.png" alt="" width="30">
+                        <a href="./r-logout.php">Logout</a>
+                    </div>
+                </div>
+                
+            </div>
+           
         </div>
 
-        <table id="order-table" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Buyer</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Note</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-                //     require_once("../db-connection.php");
-                //     $id = $_SESSION['user_id'];
-                //     $db = new mysqli(DB_SERVER, DB_USERNAME,DB_PASSWORD,DB_NAME);
-                //     // Check connection
-                //     if ($db->connect_error) {
-                //         die("Connection failed: " . $db->connect_error);
-                //     }else{
-
-                //     }
-                //     $sql="SELECT * FROM cart WHERE ='$id' AND status='active'";
-                //     $result = $conn->query($sql);
-
-                //     $table_rows=array();
-                //     $count=$result->num_rows;
-
-                //     if ($count<1) {
-                //         echo "<tr>No orders placed yet</tr>";
-                //     }else{
-                //         while($row=$result->fetch_assoc()){    
-                //             $table_row=array();              
-                //             $ _id=$row["Customer_ID"];
-                //             $ _id=$row["Cart_ID"];   
-                //             $total=$row["total"];
-                //             $note=$row["Product_ID"];
-                //             $type=["type"];
-                //             $date=["date"];
-                //             array_push($table_row, $b_id, $o_id, $total,$note,$type,$date);  
-
-                //             $sql="SELECT * FROM customers WHERE Customer_ID='$ _id'";
-                //             $result= $conn->query($sql);
-                //             $row= $result->fetch_assoc();
-                //             array_push($table_row, $row["fname"], $row["lname"]);
-
-                //             $sql="SELECT * FROM product WHERE Restaurant_ID='$ _id' AND status='active'";
-                //             $result= $conn->query($sql);
-                //             $row= $result->fetch_assoc();
-                //             array_push($table_row, $row["Item_Name"], $row["Price"], $row[""]);  
-
-                //             array_push($table_rows, $table_row);
-                //         }
-                //         for($x=0; $x<count($table_rows);$x++){
-                //             echo "
-                //             <tr>
-                //                 <td>".$table_rows[$x][1]."</td>
-                //                 <td>".$table_rows[$x][5]."</td>
-                //                 <td>".$table_rows[$x][2]."</td>
-                //                 <td>".$table_rows[$x][3]."</td>
-                //                 <td>".$table_rows[$x][4]."</td>
-                //             </tr>";
-                //          }
-            ?>   
-            </tbody>
-        </table>
+        <!-- main content -->
+        <div class="main-content">
+            <!-- title -->
+            <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">
+                        <h2 class="pull-left">Menu Details</h2>
+                        <a href="create.php" class="btn btn-success pull-right">Add New Menu Item</a>
+                    </div>
+                    <?php
+                    // Include config file
+                    require_once "../dbconnection.php";
+                    
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM meal";
+                    if($result = mysqli_query($link, $sql)){
+                        if(mysqli_num_rows($result) > 0){
+                            echo "<table class='table table-bordered table-striped'>";
+                                echo "<thead>";
+                                    echo "<tr>";
+                                        echo "<th>#</th>";
+                                        echo "<th>BREAKFAST</th>";
+                                        echo "<th>LUNCH</th>";
+                                        echo "<th>SUPPER</th>";
+                                        echo "<th>DRINK</th>";
+                                        echo "<th>ACTION</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                        echo "<td>" . $row['id'] . "</td>";
+                                        echo "<td>" . $row['Breakfast'] . "</td>";
+                                        echo "<td>" . $row['Lunch'] . "</td>";
+                                        echo "<td>" . $row['Supper'] . "</td>";
+                                        echo "<td>" . $row['Drink'] . "</td>";
+                                        echo "<td>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span style='margin-right: 10px;' class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span style='margin-right: 10px;' class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+                            // Free result set
+                            mysqli_free_result($result);
+                        } else{
+                            echo "<p class='lead'><em>No records were found.</em></p>";
+                        }
+                    } else{
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                    }
+ 
+                    // Close connection
+                    mysqli_close($link);
+                    ?>
+                </div>
+            </div>        
+        </div>
     </div>
-</div>
-<?php require_once('../footer.php')  ?>
 
-<script>
-    $(document).ready( function () {
-        $('#order-table').DataTable();
-    } );
-</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

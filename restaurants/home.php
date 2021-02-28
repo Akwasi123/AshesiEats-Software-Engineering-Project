@@ -24,28 +24,28 @@
                 <!-- menu items -->
                 <div class="menu m-active">
                     <img src="../assets/img/icons8-home-page-100.png" alt="" width="30">
-                    <a href="homepage.php">Home</a>
+                    <a href="./home.php">Home</a>
                 </div>
 
                 <div class="menu">
                     <img src="../restaurants/img/icons8-menu-100.png" alt="" width="30">
-                    <a href="cart.php">Menu</a>
+                    <a href="./menu.php">Menu</a>
                 </div>
 
                 <div class="menu">
                     <img src="../assets/img/icons8-time-machine-100.png" alt="" width="30">
-                    <a href="orderhistory.php">Orders</a>
+                    <a href="./orders.php">Orders</a>
                 </div>
 
                 <div class="bottom">
                     <div class="menu">
                         <img src="../assets/img/icons8-settings-100.png" alt="" width="30">
-                        <a href="settings.php">Profile Settings</a>
+                        <a href="./profilesettings.php">Profile Settings</a>
                     </div>
 
                     <div class="menu">
                         <img src="../assets/img/icons8-logout-rounded-left-100.png" alt="" width="30">
-                        <a href="logout.php">Logout</a>
+                        <a href="./r-logout.php">Logout</a>
                     </div>
                 </div>
                 

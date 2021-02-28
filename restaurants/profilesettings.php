@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <link rel="stylesheet" href="./css/home.css">
-<title>Akonnor - Menu</title>
+<title>Akonnor - Orders</title>
 </head>
 <body>
     <div class="content-container">
@@ -27,7 +27,7 @@
                     <a href="./home.php">Home</a>
                 </div>
 
-                <div class="menu m-active">
+                <div class="menu">
                     <img src="../restaurants/img/icons8-menu-100.png" alt="" width="30">
                     <a href="./menu.php">Menu</a>
                 </div>
@@ -38,14 +38,14 @@
                 </div>
 
                 <div class="bottom">
-                    <div class="menu">
+                    <div class="menu m-active">
                         <img src="../assets/img/icons8-settings-100.png" alt="" width="30">
-                        <a href="settings.php">Profile Settings</a>
+                        <a href="./profilesettings.php">Profile Settings</a>
                     </div>
 
                     <div class="menu">
                         <img src="../assets/img/icons8-logout-rounded-left-100.png" alt="" width="30">
-                        <a href="./r-logout.php">Logout</a>
+                        <a href="logout.php">Logout</a>
                     </div>
                 </div>
                 
@@ -116,6 +116,7 @@
             </div>        
         </div>
     </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

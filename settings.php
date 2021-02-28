@@ -77,10 +77,10 @@ if($_SESSION['Name']){
 
                 <!-- menu -->
                 <div class="card-container settings-card">
-                    <div class="card ">
+                    <!-- <div class="card ">
                         <img src="./assets/img/icons8-edit-100.png" alt="">
                         <p>Edit Profile</p>
-                    </div>
+                    </div> -->
                     <div class="card ">
                         <img src="./assets/img/icons8-forgot-password-100.png" alt="">
                         <p>Change Password</p>

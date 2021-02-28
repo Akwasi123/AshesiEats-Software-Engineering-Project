@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: brown;
+
+}
+
+.order-plaque{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    width: 100vw;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.left-img{
+    flex: 1;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.left-img img{
+    width: 100%;
+    height: 100%;
+    filter: blur(2px);
+}
+
+.order{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.brand{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand p{
+    font-size: 2rem;
+}
+
+select, input[type="text"]{
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.order-form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    width: 150px;
+    font-size: 1.5rem;
+}
+
+.f-item{
+    margin-bottom: 20px;
+}
+
+#delivery{
+    margin-left: 25px;
+}
+
+.button{
+    text-align: center;
+}
+
+.button input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.button input:hover{
+    background-color: brown;
+    color: white;
+}
+
+.close{
+    display: flex;
+    align-self: flex-end;
+    margin: 20px 20px 0px auto;
+}
+
+.close:hover{
+    cursor: pointer;
+}

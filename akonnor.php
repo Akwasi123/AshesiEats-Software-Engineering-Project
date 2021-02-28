@@ -157,7 +157,7 @@
           </div>
 
           <!-- order button -->
-          <a href="" class="order-button">
+          <a href="c-order.php" class="order-button">
             <img src="./assets/img/icons8-arrow-100.png" alt="">
           </a>
 
