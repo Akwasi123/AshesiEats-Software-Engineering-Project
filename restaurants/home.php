@@ -66,9 +66,9 @@
             <!-- menu items -->
             <div class="card-container">
                 <a class="text-decoration-none card" href="orders.php">Orders</a>
-                <a class="text-decoration-none card" href="orders.php">Feedback<i class="far fa-comment-alt"></i></a>
-                <a class="text-decoration-none card c2" href="orders.php">Sales Analytics<i class="far fa-chart-bar"></i> </a>
-                <a class="text-decoration-none card c2" href="orders.php">Profile Settings<i class="fas fa-users-cog"></i> </a>
+                <a class="text-decoration-none card" href="">Feedback<i class="far fa-comment-alt"></i></a>
+                <a class="text-decoration-none card c2" href="">Sales Analytics<i class="far fa-chart-bar"></i> </a>
+                <a class="text-decoration-none card c2" href="profilesettings.php">Profile Settings<i class="fas fa-users-cog"></i> </a>
             </div>
 
             <!-- <div class="card-container">
