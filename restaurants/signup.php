@@ -1,4 +1,4 @@
-<?php include ('validation.php')?>
+<?php include ('./validation.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +19,7 @@
             <img src="" alt="">
             <p>Sign Up</p>
         </div>
-        <form onsubmit="return valid()" action="signup.php" class="login-form" method="post">
+        <form onsubmit="return valid()" action="./signup.php" class="login-form" method="post">
             <?php include ('../error.php'); ?>
 
             <div class="field">
@@ -48,7 +48,7 @@
         </form>
 
         <!-- create account -->
-        <span class="create-account">Already have an account? <a href="login.php">Log in</a></span>
+        <span class="create-account">Already have an account? <a href="./login.php">Log in</a></span>
     </div>
     
     <img src="../assets/img/eaters-collective-12eHC6FxPyg-unsplash.jpg" alt="" class="signup-background-image">

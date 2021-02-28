@@ -1,17 +1,17 @@
 <?php
 // Include config file
-require_once "../dbconnection.php";
+require_once "dbconnection.php";
  
 // Define variables and initialize with empty values
 $password =  "";
 $password_err = "";
  
-// Processing form data when form is submitted
+// // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
     
-    // Validate password
+    // // Validate password
     $input_password = trim($_POST["password"]);
     if(empty($input_password)){
         $password_err = "Please enter a password.";
@@ -22,14 +22,14 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
     
     
-    // Check input errors before inserting in database
+    // // Check input errors before inserting in database
     if(empty($password_err)){
         // Prepare an update statement
-        $sql = "UPDATE restaurants SET password=? WHERE Restaurant_ID=?";
+        $sql = "UPDATE signup SET password=? WHERE Name=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+            mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_id);
             
             // Set parameters
             $param_password = $password;
@@ -38,7 +38,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: profilesettings.php");
+                header("location: index.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -54,16 +54,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 }
 
 else{
-    // Check existence of id parameter before processing further
+     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         // Get URL parameter
         $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM restaurants WHERE Restaurant_ID = ?";
+        $sql = "SELECT * FROM signup WHERE Name = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            mysqli_stmt_bind_param($stmt, "s", $param_id);
             
             // Set parameters
             $param_id = $id;
@@ -104,7 +104,6 @@ else{
 }
 if($_SESSION['Name']){
 ?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,13 +129,13 @@ if($_SESSION['Name']){
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                             <label>Enter New Password</label>
-                            <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                            <input type="password" name="password" class="form-control" value="">
                             <span class="help-block"><?php echo $password_err;?></span>
                         </div>
                         
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="settings.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        

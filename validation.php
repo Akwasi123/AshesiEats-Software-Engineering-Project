@@ -8,14 +8,14 @@ include 'dbconnection.php';
 
 if(isset($_POST['submit'])){
     $Name = $_POST['Name'];
-    $email = $_POST['Email'];
+    $Email = $_POST['Email'];
     $password_1 = $_POST['password_1'];
     $password_2 = $_POST['password_2'];
 
     if (empty($Name)) {
         array_push($errors, "Fill Username");
     }
-    if (empty($email)) {
+    if (empty($Email)) {
         array_push($errors, "Fill email");
     }
     if (empty($password_1)) {

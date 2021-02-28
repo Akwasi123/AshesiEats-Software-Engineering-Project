@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 27, 2021 at 01:55 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Host: localhost
+-- Generation Time: Feb 28, 2021 at 01:22 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `sep`
 --
+CREATE DATABASE IF NOT EXISTS `sep` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sep`;
 
 -- --------------------------------------------------------
 
@@ -27,28 +29,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
-CREATE DATABASE sep;
-
-USE sep;
-
 CREATE TABLE `cart` (
   `Cart_ID` int(11) NOT NULL,
   `Customer_ID` int(11) NOT NULL,
   `Product_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customers`
---
-
-CREATE TABLE `customers` (
-  `Customer_ID` int(11) NOT NULL,
-  `CName` varchar(100) NOT NULL,
-  `Gender` enum('Male','Female') NOT NULL,
-  `CEmail` varchar(100) NOT NULL,
-  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -72,8 +56,23 @@ CREATE TABLE `meal` (
 INSERT INTO `meal` (`id`, `Breakfast`, `Lunch`, `Drink`, `Supper`) VALUES
 ('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
 ('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup'),
-('3', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
-('4', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup');
+('3', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `Order_id` int(100) NOT NULL,
+  `Food` varchar(100) NOT NULL,
+  `Quantity` varchar(100) NOT NULL,
+  `Customer Name` varchar(100) NOT NULL,
+  `Hostel` varchar(100) NOT NULL,
+  `Room` varchar(100) NOT NULL,
+  `Payment Method` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -140,7 +139,8 @@ INSERT INTO `signup` (`id`, `Name`, `Email`, `password`) VALUES
 (18, 'Nana', 'bright.okrah@ashesi.edu.gh', '6512bd43d9caa6e02c990b0a82652dca'),
 (19, 'Bright Jnr O', 'b@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d'),
 (20, 'Okrah', 'bb@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d'),
-(21, 'Bright', 'b@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d');
+(21, 'Bright', 'b@gmail.com', 'bbc69d27003568a7a94626ce4337bc9d'),
+(22, 'Akwasi', 'akwasi123@gmail.com', 'b443b57ef2550d25c188bc6def7f5a82');
 
 --
 -- Indexes for dumped tables
@@ -153,12 +153,6 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`Cart_ID`),
   ADD KEY `Customer_ID` (`Customer_ID`),
   ADD KEY `Product_ID` (`Product_ID`);
-
---
--- Indexes for table `customers`
---
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`Customer_ID`);
 
 --
 -- Indexes for table `product`
@@ -190,12 +184,6 @@ ALTER TABLE `cart`
   MODIFY `Cart_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `customers`
---
-ALTER TABLE `customers`
-  MODIFY `Customer_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -211,7 +199,7 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(230) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(230) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables

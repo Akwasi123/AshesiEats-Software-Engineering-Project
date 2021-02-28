@@ -38,16 +38,6 @@ if($_SESSION['Name']){
                     <a href="cart.php">Cart</a>
                 </div>
 
-                <div class="menu">
-                    <img src="./assets/img/icons8-time-machine-100.png" alt="" width="30">
-                    <a href="orderhistory.php">Order history</a>
-                </div>
-
-
-                <div class="menu">
-                    <img src="./assets/img/icons8-gift-100.png" alt="" width="30">
-                    <a href="">Offers</a>
-                </div>
 
                 <div class="bottom">
                     <div class="menu m-active">
@@ -81,10 +71,11 @@ if($_SESSION['Name']){
                         <img src="./assets/img/icons8-edit-100.png" alt="">
                         <p>Edit Profile</p>
                     </div> -->
-                    <div class="card ">
-                        <img src="./assets/img/icons8-forgot-password-100.png" alt="">
+                    <?php echo"<a href='userpasswordchange.php?id=" .$_SESSION['Name']. "' class='card '>
+                        <img src='./assets/img/icons8-forgot-password-100.png' >
                         <p>Change Password</p>
-                    </div>
+                    </a>";
+                    ?>
                 </div>
             </div>
         </div>

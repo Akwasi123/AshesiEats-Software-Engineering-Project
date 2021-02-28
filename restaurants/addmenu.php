@@ -81,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     mysqli_close($link);
 }
+if($_SESSION['Name']){
 ?>
 
 <!DOCTYPE html>
@@ -143,3 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+<?php
+}
+else {
+    header('location: login.php');
+}

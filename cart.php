@@ -36,16 +36,6 @@ if($_SESSION['Name']){
                     <a href="cart.php">Cart</a>
                 </div>
 
-                <div class="menu">
-                    <img src="./assets/img/icons8-time-machine-100.png" alt="" width="30">
-                    <a href="orderhistory.php">Order history</a>
-                </div>
-
-
-                <div class="menu">
-                    <img src="./assets/img/icons8-gift-100.png" alt="" width="30">
-                    <a href="">Offers</a>
-                </div>
 
                 <div class="bottom">
                     <div class="menu">

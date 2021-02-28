@@ -1,3 +1,7 @@
+<?php
+session_start();
+if($_SESSION['Name']){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,3 +90,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+else {
+    header('location: login.php');
+}

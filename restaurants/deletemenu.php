@@ -38,6 +38,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         exit();
     }
 }
+if($_SESSION['Name']){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,3 +77,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     </div>
 </body>
 </html>
+<?php
+}
+else {
+    header('location: login.php');
+}
