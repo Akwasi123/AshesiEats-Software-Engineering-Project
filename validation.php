@@ -1,14 +1,14 @@
 <?php
 session_start();
 $Name="";
-$Email="";
+$email="";
 $errors=array();
 
 include 'dbconnection.php';
 
 if(isset($_POST['submit'])){
     $Name = $_POST['Name'];
-    $Email = $_POST['Email'];
+    $email = $_POST['Email'];
     $password_1 = $_POST['password_1'];
     $password_2 = $_POST['password_2'];
 

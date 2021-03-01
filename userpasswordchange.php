@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include config file
 require_once "dbconnection.php";
  
@@ -13,13 +14,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     
     // // Validate password
     $input_password = trim($_POST["password"]);
-    if(empty($input_password)){
-        $password_err = "Please enter a password.";
-    } elseif(!filter_var($input_password, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $password_err = "Please enter a valid password.";
-    } else{
-        $password = $input_password;
-    }
+    $password = $input_password;
+    
     
     
     // // Check input errors before inserting in database
@@ -32,7 +28,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_id);
             
             // Set parameters
-            $param_password = $password;
+            $param_password = md5($password);
             $param_id = $id;
             
             // Attempt to execute the prepared statement
