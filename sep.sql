@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 28, 2021 at 01:22 PM
+-- Generation Time: Mar 01, 2021 at 11:13 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -42,7 +42,7 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `meal` (
-  `id` varchar(230) NOT NULL,
+  `id` int(230) NOT NULL,
   `Breakfast` varchar(255) NOT NULL,
   `Lunch` varchar(255) NOT NULL,
   `Drink` varchar(255) NOT NULL,
@@ -54,9 +54,10 @@ CREATE TABLE `meal` (
 --
 
 INSERT INTO `meal` (`id`, `Breakfast`, `Lunch`, `Drink`, `Supper`) VALUES
-('1', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
-('2', 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup'),
-('3', 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew');
+(1, 'Milo with Bread and Sausage', 'Fried Rice with Grilled Chicken', 'Fruit Juice', 'Waakye'),
+(2, 'Tom Brown with Bread', 'Jollof Rice with Fried Chicken', 'Soft Drinks', 'Fufu and Goat Soup'),
+(3, 'Porridge with Bread and omelette', 'Fried Rice with Grilled Chicken', 'Pineapple Juice', 'Banku with Okro Stew'),
+(4, 'Bread and Egg with Coffee', 'Chicken Burger with Fries', 'Rice and stew', 'Sprite');
 
 -- --------------------------------------------------------
 
@@ -100,6 +101,13 @@ CREATE TABLE `restaurants` (
   `REMail` varchar(100) NOT NULL,
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `restaurants`
+--
+
+INSERT INTO `restaurants` (`Restaurant_ID`, `Name`, `REMail`, `Password`) VALUES
+(1, 'Akonnor', 'akonnor@ashesieats.com', 'bfc42afd6241715e4d7c28eecc392ab0');
 
 -- --------------------------------------------------------
 
@@ -155,6 +163,18 @@ ALTER TABLE `cart`
   ADD KEY `Product_ID` (`Product_ID`);
 
 --
+-- Indexes for table `meal`
+--
+ALTER TABLE `meal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`Order_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -184,6 +204,18 @@ ALTER TABLE `cart`
   MODIFY `Cart_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `meal`
+--
+ALTER TABLE `meal`
+  MODIFY `id` int(230) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `Order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -193,7 +225,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `Restaurant_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Restaurant_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `signup`
