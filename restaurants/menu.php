@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['Name']){
+if($_SESSION['r-Name']){
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -68,34 +68,24 @@ if($_SESSION['Name']){
                                 </div>
                                 <?php
                                 // Include config file
-                                require_once "config.php";
+                                require_once "dbconnection.php";
                                 
                                 // Attempt select query execution
-                                $sql = "SELECT * FROM employees";
+                                $sql = "SELECT Food, Quantity FROM orders WHERE `Customer Name` = '" .$_SESSION['Name']. "'";
                                 if($result = mysqli_query($link, $sql)){
                                     if(mysqli_num_rows($result) > 0){
                                         echo "<table class='table table-bordered table-striped'>";
                                             echo "<thead>";
                                                 echo "<tr>";
-                                                    echo "<th>#</th>";
-                                                    echo "<th>Name</th>";
-                                                    echo "<th>Address</th>";
-                                                    echo "<th>Salary</th>";
-                                                    echo "<th>Action</th>";
+                                                    echo "<th>Food</th>";
+                                                    echo "<th>Quantity</th>";
                                                 echo "</tr>";
                                             echo "</thead>";
                                             echo "<tbody>";
                                             while($row = mysqli_fetch_array($result)){
                                                 echo "<tr>";
-                                                    echo "<td>" . $row['id'] . "</td>";
-                                                    echo "<td>" . $row['name'] . "</td>";
-                                                    echo "<td>" . $row['address'] . "</td>";
-                                                    echo "<td>" . $row['salary'] . "</td>";
-                                                    echo "<td>";
-                                                        echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                                        echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                                        echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                                    echo "</td>";
+                                                    echo "<td>" . $row['Food'] . "</td>";
+                                                    echo "<td>" . $row['Quantity'] . "</td>";
                                                 echo "</tr>";
                                             }
                                             echo "</tbody>";                            

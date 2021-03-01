@@ -26,42 +26,46 @@
                 <p>Akonnor Catering Services</p>
                 <!-- <span>Enjoy your meal</span> -->
             </div>
-            <form action="" class="order-form">
+            <form action="pushorders.php" class="order-form" method="POST">
                 <div class="f-item">
                     <label for="">Order:</label>
                     <select name="foodlist">
                         <?php 
                         include "dbconnection.php";
-                        $sql = mysqli_query($link, "SELECT Breakfast FROM meal");
+                        $sql = mysqli_query($link, "SELECT Breakfast, Lunch, Supper, Drink FROM meal");
                         while ($row = $sql->fetch_assoc()){
-                            echo "<option value=\"foodlist\">" . $row['Breakfast'] . "</option>";
+                            echo "<option name = 'breakfast' selected='true' disabled='disabled'>--- Select food option ---</option>";
+                            echo "<option name = 'breakfast' value='".$row['Breakfast']."'>" . $row['Breakfast'] . "</option>";
+                            echo "<option name = 'lunch' value='".$row['Lunch']."'>" . $row['Lunch'] . "</option>";
+                            echo "<option name = 'supper' value='".$row['Supper']."'>" . $row['Supper'] . "</option>";
+                            echo "<option name = 'drinks' value='".$row['Drink']."'" . $row['Drink'] . "</option>";
                         }
                         ?>
                     </select>
                 </div>
                 <div class="f-item">
                     <label for="">Quantity:</label>
-                    <input type="text" placeholder="Quantity">
+                    <input type="text" name="quantity" placeholder="Quantity">
                 </div>
                 
                 <div class="f-item">
                      <label for="">Hostel:</label>
-                    <input type="text" placeholder="Hostel">
+                    <input type="text" name="hostel" placeholder="Hostel">
                 </div>
                
                 <div class="f-item">
                     <label for="">Room:</label>
-                    <input type="text" name="" id="" placeholder="Room">
+                    <input type="text" name="room" id="" placeholder="Room">
                 </div>
                 
                 <div class="f-item">
                     <label for="">Payment:</label>
-                    <input type="radio" name="momo" id=""> Mobile Money
-                    <input type="radio" name="delivery" id="delivery"> On-delivery
+                    <input type="radio" name="momo" id="" value="Mobile Money"> Mobile Money
+                    <input type="radio" name="delivery" id="delivery" value="On-delivery"> On-delivery
                 </div>   
                 
                 <div class="button">
-                    <input type="button" value="Order">
+                    <input type="submit" name="submit" value="Order">
                 </div>
             </form>
         </div>

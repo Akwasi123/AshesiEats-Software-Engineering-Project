@@ -56,7 +56,7 @@ if (isset($_POST['Login'])) {
 
 
         if ($row = mysqli_fetch_array($results1)) {
-            $_SESSION['Name'] = $Name;
+            $_SESSION['r-Name'] = $Name;
 
             header('location: home.php');
         } else {

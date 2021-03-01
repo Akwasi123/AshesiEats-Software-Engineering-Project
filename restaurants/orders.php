@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['Name']){
+if($_SESSION['r-Name']){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,21 +86,21 @@ if($_SESSION['Name']){
                                                 echo "<th>Hostel</th>";
                                                 echo "<th>Room</th>";
                                                 echo "<th>Payment Method</th>";
+                                                echo "<th>Action</th>";
                                             echo "</tr>";
                                         echo "</thead>";
                                         echo "<tbody>";
                                         while($row = mysqli_fetch_array($result)){
                                             echo "<tr>";
-                                                echo "<td>" . $row['ID'] . "</td>";
+                                                echo "<td>" . $row['Order_id'] . "</td>";
                                                 echo "<td>" . $row['Food'] . "</td>";
                                                 echo "<td>" . $row['Quantity'] . "</td>";
                                                 echo "<td>" . $row['Customer Name'] . "</td>";
                                                 echo "<td>" . $row['Hostel'] . "</td>";
+                                                echo "<td>" . $row['Room'] . "</td>";
                                                 echo "<td>" . $row['Payment Method'] . "</td>";
                                                 echo "<td>";
-                                                    echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span style='margin-right: 10px;' class='glyphicon glyphicon-eye-open'></span></a>";
-                                                    echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span style='margin-right: 10px;' class='glyphicon glyphicon-pencil'></span></a>";
-                                                    echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                                    echo "<a href='deleteorder.php?id=". $row['Order_id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                                 echo "</td>";
                                             echo "</tr>";
                                         }

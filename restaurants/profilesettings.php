@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['Name']){
+if($_SESSION['r-Name']){
     echo $_SESSION['ID'];
     ?>
     <!DOCTYPE html>
@@ -74,7 +74,7 @@ if($_SESSION['Name']){
                             <img src="../assets/img/icons8-edit-100.png" alt="">
                             <p>Edit Profile</p>
                         </div> -->
-                        <?php echo "<a style='text-decoration: none;' href='changepassword.php?id=". $_SESSION['Name']. "'class='card'>
+                        <?php echo "<a style='text-decoration: none;' href='changepassword.php?id=". $_SESSION['r-Name']. "'class='card'>
                             <img src='../assets/img/icons8-forgot-password-100.png' >
                             <p>Change Password</p>
                         </a>"
